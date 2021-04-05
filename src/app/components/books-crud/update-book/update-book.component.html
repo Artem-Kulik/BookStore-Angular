@@ -1,0 +1,25 @@
+<div class="mb-3 ml-3 mt-3">
+  <label for="exampleInputEmail1" class="form-label">Name:</label>
+  <input [(ngModel)]="Edit.name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+  <label for="exampleInputEmail1" class="form-label">Author:</label>
+  <input [(ngModel)]="Edit.author" type="text" class="form-control" id="exampleInputEmail1"
+    aria-describedby="emailHelp">
+
+  <label for="exampleInputEmail1" class="form-label">Year:</label>
+  <input [(ngModel)]="Edit.year" type="number" class="form-control" id="exampleInputEmail1"
+    aria-describedby="emailHelp">
+
+  <label for="exampleInputEmail1" class="form-label mt-3">Category:</label>
+  <br />
+  <select [(ngModel)]="Edit.category">
+    <option *ngFor="let category of categories;">{{category.name}}</option>
+  </select>
+</div>
+
+<div class="main">
+  <div class="inner-div">
+    <button type="button" class="mybutton btn-primary" (click)="onEdit()">Edit</button>
+    <button type="button" class="mybutton btn btn-primary" [routerLink]="['/book']">Back</button>
+  </div>
+</div>

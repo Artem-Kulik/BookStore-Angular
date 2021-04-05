@@ -1,0 +1,29 @@
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        <button type="button" [routerLink]="['/category/category-book/', category.id]" class="btn btn-success">{{
+          category.name }}</button>
+      </td>
+      <td>
+        <button type="button" (click)="onDelete(category.id)" class="btn btn-light">Delete</button>
+        <button type="button" [routerLink]="['/category/update-category/', category.id]"
+          routerLinkActive="router-link-active" class="btn btn-danger">Update</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="main">
+  <div class="inner-div">
+    <button type="button" class="mybutton btn btn-primary" [routerLink]="['/category/add-category']">Add new category</button>
+    <button type="button" class="mybutton btn btn-primary" [routerLink]="['/']">Back</button>
+  </div>
+</div>

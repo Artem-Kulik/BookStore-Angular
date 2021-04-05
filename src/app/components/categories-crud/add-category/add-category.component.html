@@ -1,0 +1,12 @@
+<div class="mb-3 ml-3 mt-3">
+  <label for="exampleInputEmail1" class="form-label">Name:</label>
+  <input [(ngModel)]="newCategory.name" type="email" class="form-control" id="exampleInputEmail1"
+    aria-describedby="emailHelp">
+</div>
+
+<div class="main">
+  <div class="inner-div">
+    <button type="button" class="mybutton btn btn-primary mr-5 ml-3" (click)="onAdd()">Add category</button>
+    <button type="button" class="mybutton btn btn-primary" [routerLink]="['/category']">Back</button>
+  </div>
+</div>
