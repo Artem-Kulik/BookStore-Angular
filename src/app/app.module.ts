@@ -17,6 +17,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CategoryBookComponent } from './components/categories-crud/category-book/category-book.component';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 
 const customNotifierOption: NotifierOptions = {
   position: {horizontal: {position: 'right'}, vertical: {position: 'top'} }
@@ -32,7 +35,10 @@ const customNotifierOption: NotifierOptions = {
     BooksComponent,
     AddBookComponent,
     UpdateBookComponent,
-    CategoryBookComponent
+    CategoryBookComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProfileEditComponent
    ],
   imports: [
     BrowserModule,

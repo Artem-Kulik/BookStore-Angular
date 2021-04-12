@@ -22,7 +22,7 @@ export class BooksComponent implements OnInit {
     this.loadCategories();
     setTimeout(() => {
       this.spinner.hide()
-    }, 450);
+    }, 920);
     
   }
 

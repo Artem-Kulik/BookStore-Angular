@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Profile change</h1>
+  <hr>
+
+  <label for="psw"><b>Name</b></label>
+  <input [(ngModel)]="prop.fullName" type="text" placeholder="Enter name" name="psw" id="psw" required>
+
+  <label for="psw"><b>Age</b></label>
+  <input [(ngModel)]="prop.age" type="number" placeholder="Enter age" name="psw" id="psw" required>
+ 
+  <label for="psw"><b>Phone</b></label>
+  <input [(ngModel)]="prop.phoneNumber" type="text" placeholder="Enter phone number" name="psw" id="psw" required>
+  
+  <label for="email"><b>Email</b></label>
+  <input [(ngModel)]="prop.email" type="text" placeholder="Enter Email" name="email" id="email" required>
+
+  <button type="submit" (click)="Edit()" class="registerbtn">Edit</button>
+</div>
+
+<div class="container signin">
+  <p>All right? <span (click)="Back()">Back</span>.</p>
+</div>

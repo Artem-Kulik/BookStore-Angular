@@ -22,6 +22,7 @@ export class UpdateBookComponent implements OnInit {
     year: 0
   };
   id: string;
+  
   categories: Array<CategoryDto>;
 
   constructor(private route: ActivatedRoute,

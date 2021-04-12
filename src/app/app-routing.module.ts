@@ -30,10 +30,16 @@ import { AddBookComponent } from './components/books-crud/add-book/add-book.comp
 import { StartComponent } from './components/start/start.component';
 import { UpdateBookComponent } from './components/books-crud/update-book/update-book.component';
 import { CategoryBookComponent } from './components/categories-crud/category-book/category-book.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 
 
 const routes: Routes = [
-  { path: '', component: StartComponent },
+  { path: '', component: RegisterComponent },
+  { path: 'start', component: StartComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'edit-profile', component: ProfileEditComponent },
   {
     path: 'category',
     children: [

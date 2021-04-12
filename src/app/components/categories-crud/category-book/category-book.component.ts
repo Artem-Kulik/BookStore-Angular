@@ -31,7 +31,7 @@ export class CategoryBookComponent implements OnInit {
 
     setTimeout(() => {
       this.spinner.hide()
-    }, 1150);
+    }, 450);
   }
 
 }

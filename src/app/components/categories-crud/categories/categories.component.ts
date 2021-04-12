@@ -23,7 +23,7 @@ export class CategoriesComponent implements OnInit {
     this.loadCategories();
     setTimeout(() => {
       this.spinner.hide()
-    }, 450);
+    }, 750);
   }
 
   onDelete(id: number) {
