@@ -5,7 +5,7 @@
         <li class="breadcrumb-item active"><span [routerLink]="['/book']">Books</span></li>
         <li class="breadcrumb-item active"><span [routerLink]="['/category']">Categories</span></li>
         <li class="breadcrumb-item active" (click)="Edit()" aria-current="page">Edit Profile</li>
-        <li class="breadcrumb-item active" aria-current="page"><span [routerLink]="['/login']">Log off</span></li>
+        <li class="breadcrumb-item active" aria-current="page" (click)="LogOff()">Log off</li>
       </ol>
     </nav>
 
@@ -15,8 +15,11 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
-              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="img rounded-circle"
-                width="150">
+              
+              <img src="{{path}}{{prop.image}}" alt="Admin" class="img rounded-circle" width="150"> 
+            
+            
+               <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="img rounded-circle" width="150"> -->
               <div class="mt-3">
                 <h4 [(ngModel)]="prop.fullName"></h4>
               </div>

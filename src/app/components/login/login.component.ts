@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ApiResponse } from 'src/app/models/apiResponse';
+import { ApiResponse, ApiTokenResponse } from 'src/app/models/apiResponse';
 import { LoginDto } from 'src/app/models/loginDto';
 import { RegisterDto } from 'src/app/models/registerDto';
 import { UserService } from 'src/app/services/User.service';
@@ -38,8 +38,9 @@ export class LoginComponent implements OnInit {
 
 
   Login(){
-    this.userService.Login(this.prop).subscribe((res: ApiResponse) => {
+    this.userService.Login(this.prop).subscribe((res: ApiTokenResponse) => {
       if (res.isSuccessful) {
+        localStorage.setItem("Token", res.token);   
         this.router.navigate(['/start', {id: res.message}]);            
       }
       else{

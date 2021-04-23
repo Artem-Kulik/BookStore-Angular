@@ -1,3 +1,5 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ElementSchemaRegistry } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
@@ -19,6 +21,8 @@ export class ProfileEditComponent implements OnInit {
     private notifier:NotifierService,
     private router: Router,
     private route: ActivatedRoute) { }
+
+    formData: FormData = new FormData();
 
     prop: EditDto = {
       id: "-1",
@@ -53,4 +57,17 @@ export class ProfileEditComponent implements OnInit {
     this.router.navigate(['/start', {id: this.id}]);      
   }
 
+
+  uploadPhoto(files: FileList){
+    if(files.item && files.item(0))
+    {
+      this.formData.append('file', files.item(0));
+    }
+    this.userService.UploadPhoto(this.id, this.formData).subscribe((res: ApiResponse)=>{
+      if(res.isSuccessful){
+                
+      }
+    })
+  }
+  
 }

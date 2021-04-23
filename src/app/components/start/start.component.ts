@@ -22,14 +22,16 @@ export class StartComponent implements OnInit {
 
   prop: EditDto = {
     id: "-1",
-    fullName: 'a',
-    age: 1,
-    phoneNumber: 'a',
-    email: 'a',
+    fullName: '',
+    age: 0,
+    phoneNumber: '',
+    email: '',
     image: 'Image'
   };
 
   id: string;
+
+  path: string = "http://localhost:4200/Images/";
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -37,7 +39,6 @@ export class StartComponent implements OnInit {
     localStorage.setItem("Id", this.id);
     this.userService.getUser(this.id).subscribe((res: ApiSingleResponse) => {
       if (res.isSuccessful) {
-        localStorage.setItem("Token", res.message);        
         console.log(res.data);
         this.prop = res.data;
       }
@@ -51,4 +52,9 @@ export class StartComponent implements OnInit {
     this.router.navigate(['/edit-profile', { id: this.id }]);
   }
 
+  LogOff(){
+    localStorage.removeItem("Token");
+    localStorage.removeItem("Id");
+    this.router.navigate(['/login']);
+  }
 }

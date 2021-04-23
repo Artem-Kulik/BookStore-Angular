@@ -1,25 +1,3 @@
-// import { NgModule } from '@angular/core';
-// import { Routes, RouterModule } from '@angular/router';
-// import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
-
-// import { CategoriesComponent } from './components/categories-crud/categories/categories.component';
-
-// import { BooksComponent } from './components/books-crud/books/books.component';
-// import { UpdateCategoryComponent } from './components/categories-crud/update-category/update-category.component';
-
-
-// const routes: Routes = [
-//   { path: '', component: BooksComponent },
-//   { path: 'add-category', component: AddCategoryComponent },
-//   { path: 'update-category/:id', component: UpdateCategoryComponent}
-// ];
-
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-//   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
@@ -33,11 +11,12 @@ import { CategoryBookComponent } from './components/categories-crud/category-boo
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { IsLoggedGuard } from './guards/isLogged.guard';
 
 
 const routes: Routes = [
   { path: '', component: RegisterComponent },
-  { path: 'start', component: StartComponent },
+  { path: 'start', component: StartComponent, canActivate: [IsLoggedGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'edit-profile', component: ProfileEditComponent },
   {

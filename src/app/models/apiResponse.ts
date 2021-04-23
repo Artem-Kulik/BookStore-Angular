@@ -1,4 +1,3 @@
-import { CategoryDto } from "./categoryDto";
 
 export class ApiResponse {
     isSuccessful: boolean;
@@ -11,4 +10,8 @@ export class ApiCollectionResponse extends ApiResponse{
 
 export class ApiSingleResponse extends ApiResponse{
     data: any;
+}
+
+export class ApiTokenResponse extends ApiResponse{
+    token: string;
 }

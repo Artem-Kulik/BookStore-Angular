@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { TokenInterceptor } from './helpers/interceptor';
 
 const customNotifierOption: NotifierOptions = {
   position: {horizontal: {position: 'right'}, vertical: {position: 'top'} }
@@ -50,7 +51,9 @@ const customNotifierOption: NotifierOptions = {
     BrowserAnimationsModule,
     NotifierModule.withConfig(customNotifierOption)
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
